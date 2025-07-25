@@ -1,3 +1,5 @@
+package day01;
+
 import java.util.Scanner;
 
 public class ex02 {
@@ -24,7 +26,7 @@ public class ex02 {
         //출력
         System.out.println(num1 + " + " + num2 + " + " + num3 + " = " + sum);
         System.out.printf("%d + %d + %d = %d",num1,num2,num3,sum);
-        
+
 
     }
 }
