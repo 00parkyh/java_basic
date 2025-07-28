@@ -1,5 +1,7 @@
 package day03;
 
+import java.util.Scanner;
+
 public class PrintEx {
     public static void main(String[] args) {
         //표준 출력 장치인 모니터에 값을 출력하였다.
@@ -38,6 +40,17 @@ public class PrintEx {
 
         //특수 문자 \t, \n %%
         System.out.printf("소금물의 농도 : %%%d\n",35);
+
+        int price = 5000;
+        System.out.printf("상품의 가격: %d원\n",price);
+        System.out.printf("상품의 가격: %8d원\n",price);
+        System.out.printf("상품의 가격: %08d원\n",price);
+
+        System.out.println("반지름을 입력하세요.");
+        Scanner sc = new Scanner(System.in);
+        int rad = sc.nextInt();
+        System.out.printf("반지름이 %d인 원의 넓이 : %.1f",rad,rad*rad*Math.PI);
+
 
     }
 }
