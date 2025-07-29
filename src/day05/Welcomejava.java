@@ -44,6 +44,9 @@ public class Welcomejava {
                     System.out.println("프로그램이 종료됩니다. ");
                     state = false;
                     break;
+                default:
+                    System.out.println("메뉴에 있는 번호만 선택해주세요. 1~8 까지 입니다.");
+                    break;
             }
         }
     }
