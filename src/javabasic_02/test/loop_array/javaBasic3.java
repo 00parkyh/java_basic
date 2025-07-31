@@ -1,6 +1,6 @@
 package javabasic_02.test.loop_array;
 
-public class javaBasci3 {
+public class javaBasic3 {
     public static void main(String[] args) {
         int num1,num2;
         boolean a = true;

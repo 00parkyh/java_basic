@@ -3,7 +3,7 @@ package javabasic_02.test.loop_array;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class javaBasci8 {
+public class javaBasic8 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String num;
