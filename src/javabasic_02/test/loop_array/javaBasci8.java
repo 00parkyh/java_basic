@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class javaBasci8 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int num;
+        String num;
         boolean a = true;
-        int cash = 0;
+        String cash ;
         int total=0;
 
         while (a) {
@@ -18,25 +18,25 @@ public class javaBasci8 {
             System.out.print("선택> ");
 
             try{
-                num = sc.nextInt();
+                num = sc.nextLine();
                 switch (num) {
-                    case 1:
+                    case "1":
                         System.out.print("예금액>");
-                        cash = sc.nextInt();
-                        total += cash;
+                        cash = sc.nextLine();
+                       total = total + Integer.parseInt(cash);
                         break;
-                    case 2:
+                    case "2":
                         System.out.print("출금액>");
-                        cash = sc.nextInt();
-                        if (total>=cash) {
-                            total -= cash;
+                        cash = sc.nextLine();
+                        if (total>=Integer.parseInt(cash)) {
+                            total -= Integer.parseInt(cash);
                         } else {
                             System.out.println("예금이 부족합니다.");
                         }
                         break;
-                    case 3:
+                    case "3":
                         System.out.printf("잔고>%d\n",total); break;
-                    case 4:
+                    case "4":
                         System.out.println("프로그램 종료");
                         a = false;
                         break;
