@@ -1,4 +1,4 @@
-package javabasic_02.day07.test;
+package javabasic_02.test.loop_array;
 
 public class javaBasci2 {
     public static void main(String[] args) {

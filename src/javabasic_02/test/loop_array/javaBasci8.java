@@ -1,4 +1,4 @@
-package javabasic_02.day07.test;
+package javabasic_02.test.loop_array;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
