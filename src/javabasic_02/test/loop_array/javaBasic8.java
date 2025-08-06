@@ -28,7 +28,7 @@ public class javaBasic8 {
                     case "2":
                         System.out.print("출금액>");
                         cash = sc.nextLine();
-                        if (total>=Integer.parseInt(cash)) {
+                        if (total>Integer.parseInt(cash)) {
                             total -= Integer.parseInt(cash);
                         } else {
                             System.out.println("예금이 부족합니다.");
@@ -40,6 +40,7 @@ public class javaBasic8 {
                         System.out.println("프로그램 종료");
                         a = false;
                         break;
+
                     default:
                         System.out.println("번호만 입력해주세요> ");
                         break;

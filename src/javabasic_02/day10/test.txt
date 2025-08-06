@@ -1,0 +1,176 @@
+<참조>
+1. 4 참조 타입의 초기값은 널이다, null로 초기화 할수 있다
+2. 3 직접 소멸코드 작성할 필요없다 jvm이 알아서 정리해준다.
+3. 2 문자열 비교는 equals
+4. 2
+5. 3  boolean 타입 배열 항목의 기본 초기값은 false 이다.
+6. array.length : 3, array[2].length : 5
+7.
+public class Main {
+      public static void main(String[] args) {
+          int[] array = {1,5,3,8,2};
+          int max = array[0];
+          for (int i = 0; i<array.length-1; i++) {
+              if (array[i]>max) {
+                  max = array[i];
+              }
+          }
+          System.out.println(max);
+      }
+  }
+
+8.
+public class Main {
+    public static void main(String[] args) {
+        int sum = 0;
+        int[][] array = {
+                {95,86},
+                {83,92,96},
+                {78,83,93,87,88}
+        };
+        for (int i = 0; i<array.length; i ++ ) {
+            for (int j = 0; j<array[i].length;j++) {
+                sum +=array[i][j];
+            }
+        }
+        System.out.println(sum);
+    }
+}
+
+
+<클래스>
+1. 3
+2. 4
+3. 4
+4. 3
+5. 1
+6. 4
+7. 2
+8. 2
+9. 2
+10. 4
+11. 3
+12. 필드, 생성자, 메소드
+13.
+public class Member {
+    private String name;
+    private String id;
+    private String password;
+    private Integer age;
+}
+
+14.
+public class Member {
+    private String name;
+    private String id;
+    private String password;
+    private Integer age;
+
+    Member(String name, String id){
+        this.name = name;
+        this.id = id;
+    }
+}
+
+15.
+public class MemberService {
+    public static void main(String[] args) {
+        MemberService memberService = new MemberService();
+        boolean result = memberService.login("hong","12345");
+        if(result) {
+            System.out.println("로그인이 되었습니다.");
+            memberService.logout("hong");
+        } else {
+            System.out.println("id 또는 password가 올바르지 않습니다.");
+        }
+    }
+    private static boolean login(String id, String password) {
+        if (id.equals("hong")&&password.equals("12345"))
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    private static void logout(String id) {
+        System.out.println(id+"님이 로그아웃 되었습니다.");
+    }
+}
+16.
+public class Printer {
+    public static void main(String[] args) {
+        Printer printer = new Printer();
+        printer.println(10);
+        printer.println(true);
+        printer.println(5.7);
+        printer.println("홍길동");
+    }
+
+    private void println(int n) {
+        System.out.println(n);
+    }
+    private void println(boolean result) {
+        System.out.println(result);
+    }
+    private void println(double a) {
+        System.out.println(a);
+    }
+    private void println(String b) {
+        System.out.println(b);
+    }
+}
+17.
+public class Printer {
+    public static void println(int value) {
+        System.out.println(value);
+    }
+    public static void println(boolean value) {
+        System.out.println(value);
+    }
+    public static void println(double value) {
+        System.out.println(value);
+    }
+    public static void println(String value) {
+        System.out.println(value);
+    }
+}
+18.
+
+19.
+public class Account {
+    public static final  int MIN_BALANCE = 0;
+    public static final  int MAX_BALANCE = 1000000;
+    private int balance;    //통장(입출금 내역 및 잔고 확인)
+
+    public void setBalance(int money) {
+        if (money<MIN_BALANCE || money >MAX_BALANCE) {
+            return;
+        }
+        this.balance += money;
+    }
+
+    public int getBalance() {
+        return this.balance;
+    }
+
+    public static void main(String[] args) {
+        Account account = new Account();
+        account.setBalance(10000);
+        System.out.println(account.balance);
+
+        account.setBalance(10000);
+        System.out.println(account.balance);
+    }
+}
+20번
+
+
+
+
+
+
+싱글톤 패턴이란 단 하나의 유일한 객체를 만들기 위한 코드패턴
+메모리 절약을 위해, 인스턴스가 필요할때 똑같은 인스턴스를 새로 만들지않고 기존의 인스턴스를 가져와 활용하는 것을 의미한다.
+
+데이터베이스 연결 모듈을 만들떄 많이 적용된다.
+디스크 연결, 네트워크 통신, DBCP 커넷견풀, 스레드 풀, 캐시, 로그 기록 객체

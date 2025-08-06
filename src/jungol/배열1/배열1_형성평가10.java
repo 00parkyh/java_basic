@@ -3,7 +3,7 @@ package jungol.배열1;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class 배열1_형성평가10 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //정수 n 입력받기
@@ -19,10 +19,11 @@ public class Main {
         }
 
         //받은 점수중 최대값을 찾아서 순서대로 max에 담기
-        for (int s = 0; s<num; s++) {
-            max[s] = Arrays.stream(num1).max().getAsInt();
-        }
-        for (int j = 0; j <num; j++) {
+//        for (int s = 0; s<num; s++) {
+//            max[s] = Arrays.stream(num1).max().getAsInt();
+//        } 정렬로 변경
+        max = Arrays.stream(num1).sorted().toArray();
+        for (int j = num-1; j >=0; j--) {
             System.out.println(max[j]);
         }
 
