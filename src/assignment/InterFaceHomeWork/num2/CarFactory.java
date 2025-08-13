@@ -21,7 +21,7 @@ public class CarFactory extends Factory implements IWorkingTogether{
     @Override
     public int workTogether(IWorkingTogether partner) {
 
-        return makeProducts('B');
+        return ((CarFactory)partner).makeProducts('B');
     }
 
 }

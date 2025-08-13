@@ -9,6 +9,7 @@ public class AnimalTest {
 
 		if (cheatableChicken instanceof Cheatable) {
 			cheatableChicken.fly();
+			System.out.println("맞음");
 		}
 
 		for (int i =1;i<=3;i++) {
@@ -16,7 +17,9 @@ public class AnimalTest {
 			dog.run(i);
 			chicken.run(i);
 			cheatableChicken.run(i);
-
+//			dog.run(1);
+//			chicken.run(1);
+//			cheatableChicken.run(1);
 		}
 	}
 }

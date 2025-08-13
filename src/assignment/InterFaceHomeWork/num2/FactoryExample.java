@@ -1,5 +1,7 @@
 package assignment.InterFaceHomeWork.num2;
 
+import javabasic_02.day12.sec05.exam02.Car;
+
 import java.util.Arrays;
 
 public class FactoryExample {
@@ -37,8 +39,14 @@ public class FactoryExample {
 		// TODO
 		System.out.println("--------------------------------------------------------------");
         System.out.println(" 1. 하루 생산량 = "+mainFactory.makeProducts(mainFactorySkill));
-        System.out.println(" 2. 파트너 공장 [" + ((Factory)partner).getFactoryName() +
-                "] 협력 시 추가 생산량 = "+((IWorkingTogether) partner).workTogether(partner));
+		if (mainFactory instanceof  CarFactory) {
+			CarFactory partnerFactory = (CarFactory) mainFactory;
+			System.out.println(" 2. 파트너 공장 [" + ((Factory)partner).getFactoryName() + "] 협력 시 추가 생산량 = "+partnerFactory.workTogether(partner));
+		} else if (mainFactory instanceof TVFactory) {
+			TVFactory partnerFactory = (TVFactory) mainFactory;
+			System.out.println(" 2. 파트너 공장 [" + ((Factory)partner).getFactoryName() + "] 협력 시 추가 생산량 = "+partnerFactory.workTogether(partner));
+		}
+
         System.out.println("--------------------------------------------------------------");
 	}
 
