@@ -23,7 +23,6 @@ public class CellPhone {
             System.out.println("통화시간입력오류");
         }
 
-
     }
     void charge(int time) {
         battery = time * 3;
@@ -39,12 +38,10 @@ public class CellPhone {
         } catch (IllegalArgumentException e) {
             System.out.println("충전시간입력오류");
         }
-//        System.out.println("충전시간 : " + time+"분");
 
     }
 
     void printBattery() {
-
         System.out.println("남은 배터리의 양 : "+battery);
     }
 }

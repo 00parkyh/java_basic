@@ -1,0 +1,35 @@
+1번 4 - 사용자 예외 처리도 있다.
+2번 3 - finally 는 무조건 사용됨
+3번 4 - 새로운 예외를 발생시키기 위해 사용되는 것은 throw 이다.
+4번 2 -
+5번 3 - ClassNotFoundException 이 먼저 와야함
+
+6번
+10
+숫자로 변환할 수 없음
+10
+인덱스를 초과했음
+10
+
+7번 -틀림 다시하기
+위에서부터 순서대로
+System.out.println("아이디가 존재하지 않습니다.")
+System.out.println("패스워드가 틀립니다.")
+throws NotExistIDException, WrongPasswordException
+throw new NotExistIDException;
+throw new NotExistIDException();
+
+8번
+try (FileWriter fw = ne FileWriter("file.txt")) {
+    fw.write("java");
+} catch(IOException e) {
+    e.printStackTrace();
+}
+
+컬렉션
+1번 4
+2번 3
+3번 4 - 하나의 null값을 저장할 수 있다.
+4번 3 - Hashtable이 더 안전하다
+5번 List<Board> 변수 = new ArrayList<Board>();
+6번 Mab

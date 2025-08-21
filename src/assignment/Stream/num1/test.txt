@@ -1,0 +1,7 @@
+문제 1번 정답 -> 4번
+문제 2번 정답 -> 3번
+문제 3번 정답 -> 3번
+문제 4번 정답 -> 1번
+문제 5번 정답 -> list.stream().filter(a -> a.toLowerCase().contains("java")).forEach(System.out::println);
+문제 6번 정답 -> double avg = list.stream().mapToInt(Member::getAge).average().getAsDouble();
+문제 7번 정답 -> list.stream().filter(m->m.getJob().equals("개발자")).toList();
