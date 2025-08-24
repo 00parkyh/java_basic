@@ -1,7 +1,7 @@
 문제 1번 정답 -> 4번
-문제 2번 정답 -> 3번
-문제 3번 정답 -> 3번
-문제 4번 정답 -> 1번
+문제 2번 정답 -> 2번 기본 자료형에서는 스트림 소스를 얻을수 없다. Integer, Long, Double 은 가능
+문제 3번 정답 -> 4번 -> 지연 처리로 인해 불가능하다.
+문제 4번 정답 -> 3번 -> 병렬처리가 항상 빠르지는 않다.7    7
 문제 5번 정답 -> list.stream().filter(a -> a.toLowerCase().contains("java")).forEach(System.out::println);
 문제 6번 정답 -> double avg = list.stream().mapToInt(Member::getAge).average().getAsDouble();
 문제 7번 정답 -> list.stream().filter(m->m.getJob().equals("개발자")).toList();

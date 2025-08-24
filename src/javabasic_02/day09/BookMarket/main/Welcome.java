@@ -2,6 +2,7 @@ package javabasic_02.day09.BookMarket.main;
 
 import javabasic_02.day09.BookMarket.bookitem.Book;
 import javabasic_02.day09.BookMarket.cart.Cart;
+import javabasic_02.day09.BookMarket.exception.CartException;
 import javabasic_02.day09.BookMarket.member.Admin;
 import javabasic_02.day09.BookMarket.member.User;
 
@@ -40,24 +41,32 @@ public class Welcome {
             System.out.println("\t" + tagline);
             menuIntroduction();
 
-            System.out.print("메뉴 번호를 선택해주세요 ");
-            int n = input.nextInt();
+            try {
+                System.out.print("메뉴 번호를 선택해주세요 ");
+                int n = input.nextInt();
 
-            if (n < 1 || n > 9) {
-                System.out.println("1부터 9까지의 숫자를 입력하세요.");
-            } else {
-                switch (n) {
-                    case 1: menuGuestInfo(userName, userMobile);break;
-                    case 2: menuCartItemList();break;
-                    case 3: menuCartClear();break;
-                    case 4: menuCartAddItem(mBookList);break;
-                    case 5: menuCartRemoveItemCount();break;
-                    case 6: menuCartRemoveItem();break;
-                    case 7: menuCartBill();break;
-                    case 8: menuExit();quit = true;break;
-                    case 9: menuAdminLogin();break;
-                    default : menuNumExcept(); break;
+                if (n < 1 || n > 9) {
+                    System.out.println("1부터 9까지의 숫자를 입력하세요.");
+                } else {
+                    switch (n) {
+                        case 1: menuGuestInfo(userName, userMobile);break;
+                        case 2: menuCartItemList();break;
+                        case 3: menuCartClear();break;
+                        case 4: menuCartAddItem(mBookList);break;
+                        case 5: menuCartRemoveItemCount();break;
+                        case 6: menuCartRemoveItem();break;
+                        case 7: menuCartBill();break;
+                        case 8: menuExit();quit = true; break;
+                        case 9: menuAdminLogin();break;
+                        default: menuNumExcept();break;
+                    }
                 }
+            }catch (CartException e) {
+                System.out.println(e.getMessage());
+                quit = true;
+            } catch (Exception e) {
+                System.out.println("올바라지 않은 메뉴선택으로 종료합니다.");
+                quit =  true;
             }
         }
     }
@@ -81,8 +90,8 @@ public class Welcome {
        }
     }
     //3번 장바구니 비우기 클론 코딩 완
-    public static void menuCartClear() {
-        if(mCart.mCartCount == 0) System.out.println("장바구니에 항목이 없습니다.");
+    public static void menuCartClear() throws CartException{
+        if(mCart.mCartCount == 0) throw new CartException("장바구니에 항목이 없습니다.");
         else {
             System.out.println("장바구니의 모든 항목을 삭제하겠습니까? Y | N");
             Scanner input = new Scanner(System.in);

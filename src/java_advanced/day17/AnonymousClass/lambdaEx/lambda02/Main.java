@@ -1,0 +1,20 @@
+package java_advanced.day17.AnonymousClass.lambdaEx.lambda02;
+
+public class Main {
+    public static void main(String[] args) {
+        Person person  = new Person();
+
+        person.action(
+                () -> {
+                    System.out.println("9시 까지 출근을 합니다.");
+                    System.out.println("12시부터 1시까지 점심시간 입니다.");
+                    System.out.println("1시부터 5시까지 오후 업무 시간입니다.");
+                }
+
+        );
+
+        person.action(
+                () -> System.out.println("퇴근을 합니다.")
+        );
+    }
+}
